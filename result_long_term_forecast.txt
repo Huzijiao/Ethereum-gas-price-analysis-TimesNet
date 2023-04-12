@@ -1,0 +1,47 @@
+long_term_forecast_test_TimesNet_custom_ftM_sl96_ll48_pl96_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0
+mse:1.3909492492675781, mae:0.7284500598907471
+
+test3 newTimesNet
+long_term_forecast_test_newTimesNet_custom_ftMS_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.21242237091064453, mae:0.23159530758857727
+
+test4 benchmark
+long_term_forecast_test_TimesNet_custom_ftMS_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.20476952195167542, mae:0.22656328976154327
+
+test5 learning_rate: 0.001 compared to test4
+long_term_forecast_test_TimesNet_custom_ftMS_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.20893079042434692, mae:0.22193537652492523
+
+test6: transformer
+long_term_forecast_test_Transformer_custom_ftMS_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.2328377664089203, mae:0.2949489951133728
+
+test7 autoformer
+long_term_forecast_test_Autoformer_custom_ftMS_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.22571855783462524, mae:0.2731265723705292
+
+test9 use augmented data
+long_term_forecast_test_TimesNet_custom_ftMS_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.20516154170036316, mae:0.22432003915309906
+
+test10 change model to DLinear
+long_term_forecast_test_DLinear_custom_ftMS_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.20924171805381775, mae:0.26151883602142334
+
+test11 different dataset compared to test4
+long_term_forecast_test_TimesNet_custom_ftM_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.02307371236383915, mae:0.0867283046245575
+
+test12 different dataset compared to test4
+long_term_forecast_test_TimesNet_custom_ftM_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.03738931939005852, mae:0.1480470448732376
+
+test13 different dataset compared to test4
+long_term_forecast_test_TimesNet_custom_ftM_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.2371169477701187, mae:0.30170300602912903
+
+test14 learning_rate: 0.01 compared to test4
+long_term_forecast_test_TimesNet_custom_ftMS_sl96_ll48_pl30_dm32_nh8_el2_dl1_df32_fc3_ebtimeF_dtTrue_test_0  
+mse:0.1994970440864563, mae:0.21764762699604034
+

@@ -1,0 +1,68 @@
+# basic config
+# different dataset compared to test4
+task_name: long_term_forecast  # 任务名称：options:[long_term_forecast, short_term_forecast, imputation, classification, anomaly_detection]
+is_training: 1  # 是否训练 （1表示训练，0表示只test）
+model_id: test  # 模型名称
+model: TimesNet # 用的模型 options: [Autoformer, Transformer, TimesNet]
+
+# data config
+data: custom
+root_path: ./dataset/weather  # data文件的根目录
+data_path:  weather.csv  # data文件的名字
+features: M # options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate
+target: OT # 要预测的值的名称
+freq: d # 预测的time频率，年、月、日等，options:[s:secondly, t:minutely, h:hourly, d:daily, b:business days, w:weekly, m:monthly]
+checkpoints: ./checkpoints # model保存的地址
+
+# forecasting task config
+seq_len: 96 # input sequence length
+label_len: 48 # start token length
+pred_len: 30 # prediction sequence length
+seasonal_patterns: Monthly  # subset for M4
+
+# inputation task config
+mask_rate: 0.25  # mask ratio
+
+# anomaly detection task
+anomaly_ratio: 0.25 # prior anomaly ratio (%)
+
+# model define
+top_k: 5 # for TimesBlock
+num_kernels: 6 # for Inception
+enc_in: 2 # encoder input size
+dec_in: 2 # decoder input size
+c_out: 2 # output size
+d_model: 32 # dimension of model
+n_heads: 8 # num of heads
+e_layers: 2 # num of encoder layers
+d_layers: 1 # num of decoder layers
+d_ff: 32 # dimension of fcn
+moving_avg: 25 # window size of moving average
+factor: 3 # attn factor
+distil: True # whether to use distilling in encoder, using this argument means not using distilling
+dropout: 0.1
+embed: timeF # time features encoding, options:[timeF, fixed, learned]
+activation: gelu # 激活函数
+output_attention: store_true # whether to output attention in ecoder
+
+# optimization config
+num_workers: 10 # data loader num workers
+itr: 1 # experiments times
+train_epochs: 10 # 训练次数
+batch_size: 16 # batch size of train input data
+patience: 10 # early stopping patience
+learning_rate: 0.0001 # optimizer learning rate
+des: test  # exp description
+loss: MSE  # loss function
+lradj: type1 # adjust learning rate
+use_amp: False # use automatic mixed precision training
+
+# GPU config
+use_gpu: True
+gpu: 0
+use_multi_gpu: False # use multiple gpus
+devices: 0,1,2,3 # device ids of multile gpus
+
+# de-stationary projector params
+p_hidden_dims: [128, 128] # hidden layer dimensions of projector (List)
+p_hidden_layers: 2 # number of hidden layers in projector
