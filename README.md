@@ -1,7 +1,7 @@
 # TimesNet: Temporal 2D-Variation Modeling for General Time Series Analysis
-论文地址：https://arxiv.org/abs/2210.02186
+paper: https://arxiv.org/abs/2210.02186
 
-源代码地址：https://github.com/thuml/TimesNet
+source code: https://github.com/thuml/TimesNet
 
 [ICLR2023 | TimesNet: 时序基础模型，预测、填补、分类等五大任务领先 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/606575441)
 
